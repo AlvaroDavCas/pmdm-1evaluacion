@@ -1,6 +1,9 @@
 package edu.iesam.teslaapp.feature.carslist
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,5 +21,19 @@ class CarsListActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        initListeners()
+    }
+
+    private fun initListeners() {
+        val labelCarId = findViewById<EditText>(R.id.input_car_id)
+        val actionFind = findViewById<Button>(R.id.action_find)
+        actionFind.setOnClickListener {
+            buttonFindClicked(labelCarId.text.toString())
+        }
+    }
+
+    private fun buttonFindClicked(carId: String) {
+        //el usuario ha pulsado el botón.
+        Log.d(CarsListActivity::class.java.simpleName, carId)
     }
 }
