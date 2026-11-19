@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TeslaApp</string>
+    <string name="local_source_xml">cars_tesla</string>
+</resources>
